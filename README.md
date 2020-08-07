@@ -1,2 +1,2 @@
-# templates
+# Templates
 Various Templates Designed by Me.
