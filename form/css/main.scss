@@ -8,6 +8,11 @@
     src: url("../assets/fonts/Montserrat-SemiBold.ttf");
 }
 
+@font-face {
+    font-family: "MontserratBlack";
+    src: url("../assets/fonts/Montserrat-Black.ttf");
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -24,6 +29,7 @@ body {
         margin-top: 50px;
         font-family: MontserratBold;
         font-size: 30px;
+        text-transform: uppercase;
         span {
             border-top: 6px #fffb00 solid;
         }
@@ -63,6 +69,7 @@ body {
             height: 32px;
             margin: 5px 0;
             padding: 0px 10px;
+            font-family: monospace;
             border: 2px #000 solid;
             border-radius: 5px;
 
@@ -75,7 +82,10 @@ body {
         #submit {
             width: 100%;
             margin-top: 50px;
+            font-family: MontserratBold;
             font-size: 16px;
+            letter-spacing: 5px;
+            color: black;
             background-color: #fff;
 
             &:hover {
@@ -83,6 +93,10 @@ body {
             }
         }
     }
+}
+
+.watermark {
+    display: none;
 }
 
 @media (min-width: 576px) and (min-height: 576px) {
@@ -98,5 +112,34 @@ body {
     .form-container {
         padding: 50px;
         padding-bottom: 35px;
+    }
+
+    .watermark {
+        display: inline;
+        font-family: MontserratBlack;
+        color: #fcedd9;
+        // color: #f5e0d9;
+        
+        div:nth-child(1) {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            font-size: 16vw;
+            letter-spacing: 3vw;
+            text-transform: uppercase;
+            z-index: -1;
+        }
+        
+        div:nth-child(2) {
+            position: absolute;
+            right: 10vw;
+            top: 0;
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            font-size: 4vh;
+            letter-spacing: 8vh;
+            text-transform: uppercase;
+            z-index: -1;
+        }
     }
 }
