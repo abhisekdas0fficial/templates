@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.6rem;
+    background-color: white;
+    box-shadow: 100px 100px 100px rgba(0, 0, 0, 0.05);
+
+    .card-1 {
+        padding: 50px;
+        flex: 1;
+        perspective: 1000px;
+
+        .icard {
+            width: 300px;
+            height: 200px;
+            margin: auto;
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 30px 30px 50px rgba(0, 0, 0, 0.12);
+            transform-style: preserve-3d;
+            // transform: rotateX(10deg);
+
+            .layer-1 {
+                width: inherit;
+                height: inherit;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: pink;
+                border-radius: 10px;
+                clip-path: polygon(0 0, 80% 0, 50% 100%, 0 100%);
+                z-index: 2;
+            }
+            .layer-2 {
+                width: inherit;
+                height: inherit;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: whitesmoke;
+                border-radius: 10px;
+                z-index: 1;
+            }
+        }
+    }
+
+    .card-2 {
+        padding: 50px;
+        flex: 1;
+
+        h2 {
+            margin-bottom: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 36px;
+        }
+
+        button {
+            margin-top: 30px;
+            padding: 10px 30px;
+            font-size: 14px;
+            font-weight: 800;
+            color: black;
+            background-color: white;
+            border: 2px #000 solid;
+            transition: all 0.3s ease;
+
+            &:hover {
+                color: white;
+                background-color: black;
+            }
+        }
+    }
+}
+
+@media(min-width: 786px) {
+    body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+    }
+    
+    section {
+        margin: 60px;
+        padding: 100px 0;
+        flex-direction: row;
+    
+        .card-1 .icard {
+            width: 450px;
+            height: 300px;
+        }
+    
+        .card-2 {
+            position: relative;
+    
+            h2 {
+                font-size: 36px;
+            }
+    
+            button {
+                position: absolute;
+                left: 50px;
+                bottom: 50px;
+            }
+        }
+    }
+}
