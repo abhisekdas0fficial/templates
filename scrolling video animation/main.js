@@ -34,7 +34,7 @@ gsap.to(progress, {
         trigger: "section",
         start: "bottom bottom",
         end: "+=2600 top",
-        scrub: 0.5,
+        scrub: true,
         pin: true
     },
     frameIndex: frameCount,
