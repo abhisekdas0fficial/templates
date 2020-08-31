@@ -33,7 +33,7 @@ gsap.to(progress, {
     scrollTrigger: {
         trigger: "section",
         start: "bottom bottom",
-        end: "+=1200 top",
+        end: "+=2600 top",
         scrub: 0.5,
         pin: true
     },
