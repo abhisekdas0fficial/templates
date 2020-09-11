@@ -10,32 +10,60 @@ body {
 }
 
 header {
+    width: 100%;
     display: flex;
-    justify-content: space-around;
+    position: fixed;
+    justify-content: space-between;
     align-items: center;
     border-bottom: 2px black solid;
+    background-color: #fff;
+    cursor: none;
 
     #logo {
+        margin: 0 10%;
+        padding: 10px 20px;
         font-family: 'Inconsolata', monospace;
         font-size: 36px;
         line-height: 0.8;
+        border-radius: 5px;
+        transition: background-color 0.4s ease;
+
+        &:hover {
+            background-color: #ccff00;
+        }
     }
 
     nav ul {
         list-style: none;
         li {
             display: inline-block;
-            margin: 20px;
+            margin: 10px;
+            padding: 10px;
             a{
                 font-family: Arial, Helvetica, sans-serif;
-                font-size: 20px;
+                font-size: 22px;
                 font-weight: 900;
+                letter-spacing: 2px;
                 color: #000;
                 text-transform: uppercase;
                 text-decoration: none;
                 pointer-events: none;
             }
+            &:hover ~ .cursor-1 {
+                transform: scale(3);
+            }
         }
+    }
+    
+    .cursor-1 {
+        display: none;
+        pointer-events: none;
+        position: fixed;
+        padding: 0.5rem;
+        background-color: #fff;
+        border-radius: 50%;
+        mix-blend-mode: difference;
+        transition: transform 0.3s ease;
     }
 }
 
@@ -67,12 +95,13 @@ section {
             z-index: -2;
         }
         
-        &:hover .cursor{
-            transform: translate(-50%, -50%) scale(18);
+        &:hover .cursor-2{
+            transform: scale(18);
         }
     }
 
-    .cursor {
+    .cursor-2 {
+        display: none;
         pointer-events: none;
         position: fixed;
         padding: 0.5rem;

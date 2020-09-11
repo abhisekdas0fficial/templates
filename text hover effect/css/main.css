@@ -11,21 +11,35 @@ body {
 }
 
 header {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  position: fixed;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   border-bottom: 2px black solid;
+  background-color: #fff;
+  cursor: none;
 }
 
 header #logo {
+  margin: 0 10%;
+  padding: 10px 20px;
   font-family: 'Inconsolata', monospace;
   font-size: 36px;
   line-height: 0.8;
+  border-radius: 5px;
+  -webkit-transition: background-color 0.4s ease;
+  transition: background-color 0.4s ease;
+}
+
+header #logo:hover {
+  background-color: #ccff00;
 }
 
 header nav ul {
@@ -34,17 +48,38 @@ header nav ul {
 
 header nav ul li {
   display: inline-block;
-  margin: 20px;
+  margin: 10px;
+  padding: 10px;
 }
 
 header nav ul li a {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 900;
+  letter-spacing: 2px;
   color: #000;
   text-transform: uppercase;
   text-decoration: none;
   pointer-events: none;
+}
+
+header nav ul li:hover ~ .cursor-1 {
+  -webkit-transform: scale(3);
+          transform: scale(3);
+}
+
+header .cursor-1 {
+  display: none;
+  pointer-events: none;
+  position: fixed;
+  padding: 0.5rem;
+  background-color: #fff;
+  border-radius: 50%;
+  mix-blend-mode: difference;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 
 section {
@@ -82,12 +117,13 @@ section h1::after {
   z-index: -2;
 }
 
-section h1:hover .cursor {
-  -webkit-transform: translate(-50%, -50%) scale(18);
-          transform: translate(-50%, -50%) scale(18);
+section h1:hover .cursor-2 {
+  -webkit-transform: scale(18);
+          transform: scale(18);
 }
 
-section .cursor {
+section .cursor-2 {
+  display: none;
   pointer-events: none;
   position: fixed;
   padding: 0.5rem;
