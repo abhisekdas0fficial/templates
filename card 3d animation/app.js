@@ -23,7 +23,7 @@ container.addEventListener('mouseenter', (e) => {
     sneaker.style.transform = 'translateZ(180px) rotate(45deg)';
     description.style.transform = 'translateZ(125px)';
     sizes.style.transform = 'translateZ(100px)';
-    purchase.style.transform = 'translateZ(200px)';
+    purchase.style.transform = 'translateZ(150px)';
 })
 
 // Animate Out
